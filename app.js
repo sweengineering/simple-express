@@ -15,7 +15,7 @@ app.listen(port,function(){
     console.log("Application is listening port "+port);
 });
 app.get('/',function(request, response){
-    response.send("Simple Express example");
+    response.send("Simple Express example running in "+process.env.DEMO);
 });
 
 module.exports=app;
