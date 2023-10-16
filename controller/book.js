@@ -1,17 +1,20 @@
 const express=require('express');
 const controller=express.Router();
+const book=require('../model/book_model');
 
 controller.get('/',function(request,response){
-    response.send("This will return all books");
+    let data=book.getAllBooks();
+    response.send(data);
 });
 
 controller.get('/:id',function(request,response){
-    response.send("This will return book which id ="+request.params.id);
+    let data=book.getOneBook(request.params.id);
+    response.send(data);
 });
 
 controller.post('/',function(request, response){
-    console.log(request.body);
-    response.send('This will add a new book');
+    let data=book.addBook(request.body);
+    response.send(data);
 });
 
 controller.put('/:id',function(request,response){
