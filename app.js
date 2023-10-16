@@ -3,6 +3,8 @@ const port=3000;
 const bookRouter=require('./controller/book');
 
 const app=express();
+app.use(express.json());
+app.use(express.urlencoded({}));
 
 app.use('/book',bookRouter);
 

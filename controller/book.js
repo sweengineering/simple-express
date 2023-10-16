@@ -10,7 +10,17 @@ controller.get('/:id',function(request,response){
 });
 
 controller.post('/',function(request, response){
+    console.log(request.body);
     response.send('This will add a new book');
+});
+
+controller.put('/:id',function(request,response){
+    console.log(request.body);
+    response.send("This will update the book which id="+request.params.id);
+});
+
+controller.delete('/:id',function(request, response){
+    response.send("This will delete the which id="+request.params.id);
 });
 
 /*controller.get('/:fname/:lname',function(request,response){
